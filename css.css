@@ -1,0 +1,247 @@
+@font-face {
+    font-family: Quaver;
+    src: url(quaver.ttf);
+}
+
+
+
+
+body{
+    background:url('bg.png');
+    background-attachment: fixed;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:0;
+    color:#cbcdf0;
+    font-family:Quaver;
+}
+
+main{
+    max-width: 60rem;
+    width: 100%;
+    display: block;
+    margin: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size:500%;
+}
+
+main a{
+    color:#7177da;
+    text-decoration: none;
+}
+
+@keyframes bigborder{       /* using GIF borders caused compatibility issues in chrome */
+    0%{border-image: url(borders/big1.png) 16 round;}
+    50%{border-image: url(borders/big2.png) 16 round;}
+}
+
+@keyframes medborder{     
+    0%{border-image: url(borders/med1.png) 8 round;}
+    50%{border-image: url(borders/med2.png) 8 round;}
+}
+
+@keyframes smallborder{     
+    0%{border-image: url(borders/sml1.png) 4 round;}
+    50%{border-image: url(borders/sml2.png) 4 round;}
+}
+
+.bigborder{
+    border: 16px solid transparent;     
+    /* border-image: url(border-big.gif) 16 round;        */
+    animation: bigborder 1s linear infinite;
+    animation-timing-function: step-end;
+}
+
+.medborder{
+    border: 8px solid transparent;
+    animation: medborder 1s linear infinite;
+    animation-timing-function: step-end;
+}
+
+.smallborder{
+    border: 4px solid transparent;
+    animation: smallborder 1s linear infinite;
+    animation-timing-function: step-end;
+}
+
+aside{
+    display: unset;
+    width: 300px;
+    height: calc(100vh - 2em);
+    position: sticky;top: 0;
+    margin:1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex{
+    display:flex;
+}
+
+main, form, overlay div, .panel{
+    padding:1em;
+    background-color:#1c1331;
+}
+
+form, .panel{
+    height: fit-content;
+}
+
+.mb-3{
+    margin:1em;
+    margin-left:0em;
+}
+
+input, textarea{
+    background-color:transparent;
+    color:#cbcdf0;
+    font-family:Quaver;
+}
+
+button{
+    background-color:#7177da;
+    color:#1c1331;
+    font-family:Quaver;
+    margin:8px;
+    border-image-outset:8px;
+}
+
+.panel button{
+    background-color:transparent;
+    color:#cbcdf0;
+    text-align: center;
+}
+
+
+button:hover{
+    background-color:#4747c4;
+    color:#cbcdf0;
+}
+
+.outset{
+    margin:8px;
+    border-image-outset:8px !important;
+}
+
+overlay{
+    position: fixed;
+    background-image: url(overlay.png);
+    height: 100%;
+    width: 100%;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#regzone{
+    padding:0;
+}
+
+.alert{
+    position: absolute;
+    border-image-outset:16px !important;
+    background-color:#7177da;
+    font-size:150%;
+    padding: 0.5em 1em 0.5em 1em;
+    margin:1.5em;
+    text-shadow:0px 3px #353591;
+}
+
+.alert-danger{
+    filter: hue-rotate(90deg);
+    animation-duration: 0.2s;
+}
+
+.alert-success{
+    filter: hue-rotate(-150deg);
+}
+
+.popup {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1000ms ease-in, visibility 0ms ease-in 1000ms, top 1000ms ease-in;
+    top:3em;
+    
+  }
+  
+.popup.show {
+    visibility: visible;
+    opacity: 1;
+    top:0em;
+}
+
+.panel div button a{
+    text-decoration: none;
+    color:inherit;
+}
+
+.drawingpanel{
+    width: calc(50% - 2em);;
+}
+
+.drawingpanel img{
+    width:100%;
+}
+
+.gallery{
+    width:100%;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+hr{
+    border: dashed 1px #be51c8
+}
+
+.gallery.single{
+    justify-content: center;
+}
+
+.pagenav{
+    width:100%;
+    justify-content: space-between;
+    align-content:center;
+}
+
+.pagenav img{
+    width:49px;
+    height:49px;
+}
+
+.pagenav h2{
+    margin:0;
+}
+
+.home{
+    color:inherit;
+    font-size:200%;
+    margin:1em;
+    text-decoration: none;
+}
+
+.commentbox{
+    /* justify-content:space-between; */
+    width:calc(100% - 2em);
+}
+
+div.commentbox{
+    padding:1em;
+    flex-direction:column;
+}
+
+div.commentbox p{
+    margin:0;
+    width:100%;
+}
+
+.commentbox input, .commentbox textarea{
+    width:100%;
+}
