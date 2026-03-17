@@ -4,4 +4,4 @@ the drawing tool itself is by https://github.com/desuwa/tegaki with some slight 
 
 # installation
 
-just copy into xampp htdocs
+just copy the folder into xampp htdocs
